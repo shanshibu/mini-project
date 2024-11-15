@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Old Book Selling Login</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Add some basic styling for the error message */
+        .error-message {
+            color: red;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form from submitting normally
+
+        var form = this;
+        var formData = new FormData(form);
+        var errorMessageElement = document.getElementById('error-message');
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'login.php', true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                var response = JSON.parse(xhr.responseText);
+                if (response.success) {
+                    // Redirect to the specified page (dashboard for admin, home for regular users)
+                    window.location.href = response.redirect;
+                } else if (response.error) {
+                    errorMessageElement.textContent = response.error; // Display error message
+                }
+            }
+        };
+
+        // Send form data
+        xhr.send(new URLSearchParams(formData).toString());
+    });
+});
+
+    </script>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <button type="submit">Login</button>
+            <p id="error-message" class="error-message"></p> <!-- Error message container -->
+        </form>
+        <p class="signup-text">Don't have an account? <a href="signup.html">Sign up</a></p>
+    </div>
+</body>
+</html>

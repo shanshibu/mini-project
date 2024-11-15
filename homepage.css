@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #2C3E50;
+}
+
+.vintage-header {
+    background-color: #D2B48C; /* Light Brown */
+    color: white;
+    padding: 100px 0;
+}
+
+.jumbotron .btn-primary {
+    background-color: #800000; /* Maroon */
+    border: none;
+}
+
+.jumbotron .btn-primary:hover {
+    background-color: #6B8E23; /* Olive Green */
+}
+
+.card {
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.card .btn-primary {
+    background-color: #800000; /* Maroon */
+    border: none;
+}
+
+.card .btn-primary:hover {
+    background-color: #6B8E23; /* Olive Green */
+}
+
+.footer {
+    background-color: #6B8E23; /* Olive Green */
+}
+
+.navbar-nav .nav-item .btn-danger {
+    background-color: #FF6347; /* Tomato */
+    border: none;
+}
+
+.navbar-nav .nav-item .btn-danger:hover {
+    background-color: #FF4500; /* OrangeRed */
+}

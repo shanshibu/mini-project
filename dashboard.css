@@ -1,0 +1,50 @@
+/* Wrapper styling to create a layout */
+#wrapper {
+    display: flex;
+    height: 100vh;
+    overflow: hidden; /* Prevents unwanted scrollbars */
+}
+
+/* Sidebar styling */
+#sidebar-wrapper {
+    position: fixed; /* Fixes sidebar in place */
+    top: 0;
+    left: 0;
+    height: 100vh; /* Full viewport height */
+    width: 250px; /* Adjust width as needed */
+    overflow-y: auto; /* Allows scrolling if content exceeds */
+    background-color: #343a40;
+    color: white;
+    z-index: 1000; /* Keeps sidebar above content */
+}
+
+/* Sidebar link styling */
+#sidebar-wrapper .list-group-item {
+    padding: 20px;
+    color: white;
+    text-align: center;
+    border: none;
+}
+
+#sidebar-wrapper .list-group-item:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Content wrapper styling */
+#page-content-wrapper {
+    margin-left: 250px; /* Offset to align with sidebar */
+    padding: 20px;
+    width: calc(100% - 250px); /* Adjusts width to prevent overlap */
+    overflow-y: auto; /* Adds vertical scrolling if needed */
+}
+
+/* Main dashboard content styling */
+.container-fluid h1, .container-fluid h2 {
+    color: #333;
+}
+
+.card {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 5px;
+}

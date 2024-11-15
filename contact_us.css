@@ -1,0 +1,64 @@
+/* Set full-screen background image */
+body {
+    background: url('contacts.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Center and Fix the form */
+.contact-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 600px; /* Set a max-width for the form */
+    padding: 20px;
+    z-index: 10;
+}
+
+/* Additional styling for the form */
+h2 {
+    margin-top: 60px;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add a subtle shadow for better readability */
+}
+
+.form-control {
+    border-radius: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent inputs */
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 10px;
+}
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+.bg-light.bg-opacity-50 {
+    background-color: rgba(255, 255, 255, 0.6) !important; /* Semi-transparent form */
+}
+
+#status {
+    font-size: 14px;
+}
+
+.text-white {
+    color: #ffffff !important;
+}
+
+/* Responsive adjustments for small screens */
+@media (max-width: 768px) {
+    .contact-container {
+        width: 90%; /* Adjust width for smaller devices */
+        max-width: 90%;
+    }
+}
